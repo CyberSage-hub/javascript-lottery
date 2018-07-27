@@ -19,3 +19,48 @@
  44 
  45         }
 ```
+
+
+```javascript
+        var g = g || {};
+        //奖品概率数组
+        g.data = [
+            {'name':'PSV2000','g':1,'deg':10},
+            {'name':'PSV2001','g':2,'deg':100},
+            {'name':'PSV2002','g':3,'deg':160},
+            {'name':'PSV2003','g':4,'deg':230},
+            {'name':'PSV2004','g':5,'deg':300},
+        ];
+        
+        //* 抽奖概率
+        var probably = function (prop){
+            var res = '';
+            if(Array.isArray(prop)){
+                var sum = now = 0;
+                // 计算概率总和
+                prop.forEach(function(v,k,array){
+                    sum += v.g;
+                });
+                var x = 1;
+                var y = sum;
+
+                var rand = parseInt(Math.random() * (x - y + 1) + y);
+                //概率数组循环
+                var len = prop.length;
+                for(var j=0;j<len;j++){
+                    now += prop[j].g;
+                    if (rand <= now) {
+                        res = j;
+                        break;
+                    }
+                }
+            }else{
+                res = '';
+            }
+            return res;
+        }
+        
+        //调用
+        var result = probably(g.data);
+        console.log(g.data[result]);        
+```
