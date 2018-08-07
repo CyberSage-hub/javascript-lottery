@@ -1,7 +1,7 @@
 ### mysql国内源
 > http://mirrors.ustc.edu.cn/mysql-ftp/Downloads/MySQL-8.0/
->例如：
->http://mirrors.ustc.edu.cn/mysql-ftp/Downloads/MySQL-8.0/mysql-community-server-8.0.12-1.el7.x86_64.rpm
+> 例如：
+> http://mirrors.ustc.edu.cn/mysql-ftp/Downloads/MySQL-8.0/mysql-community-server-8.0.12-1.el7.x86_64.rpm
 
 ### 各系统安装vm-tools
 CentOS6:
