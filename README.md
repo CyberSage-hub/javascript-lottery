@@ -1,3 +1,4 @@
+客户端请求后，直接返回给客户端，服务器端继续执行
 ```php
  27         public function index()
  28         {
@@ -20,7 +21,7 @@
  45         }
 ```
 
-
+javascript抽奖概率算法
 ```javascript
         var g = g || {};
         //奖品概率数组
