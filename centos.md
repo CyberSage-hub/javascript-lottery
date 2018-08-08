@@ -39,33 +39,6 @@ aptitude -y install open-vm-tools
 > 设置开机启动：systemctl enable nginx.service
 > 提示找不到bzip2，但是明明有安装bzip2  则yum install -y bzip2-devel
 > 解压php7源码，在解压后的目录里执行
-```bash
-			./configure 
-			--prefix=/usr/local/php 
-			--enable-fpm 
-			--disable-short-tags 
-			--with-openssl 
-			--with-pcre-regex 
-			--with-pcre-jit 
-			--with-zlib 
-			--enable-bcmath 
-			--with-bz2 
-			--enable-calendar 
-			--with-curl 
-			--enable-exif 
-			--with-gd 
-			--enable-intl 
-			--enable-mbstring 
-			--with-mysqli 
-			--enable-pcntl 
-			--with-pdo-mysql 
-			--enable-soap 
-			--enable-sockets 
-			--with-xmlrpc 
-			--enable-zip 
-			--with-webp-dir 
-			--with-jpeg-dir 
-			--with-png-dir
-```
+> 参见文档：https://my.oschina.net/u/144160/blog/540301
 > 参见文档：https://www.prosinger.net/compile-php-7-on-centos/
 > 参见文档：https://segmentfault.com/a/1190000004123048
