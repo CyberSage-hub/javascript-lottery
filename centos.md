@@ -45,3 +45,12 @@ aptitude -y install open-vm-tools
 
 > centos7安装mysql8或者mysql5.7参考：https://linuxize.com/post/install-mysql-on-centos-7/
 
+> 下载mysql8.0 rpm包 http://repo.mysql.com/yum/mysql-8.0-community/el/7/x86_64/mysql80-community-release-el7-1.noarch.rpm
+> 解压后执行
+
+```bash
+./configure --prefix=/usr/local/php7 --with-config-file-path=/usr/local/php7/etc --enable-inline-optimization --disable-debug --disable-rpath --enable-shared --enable-opcache --enable-fpm --with-fpm-user=www --with-fpm-group=www --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-gettext --enable-mbstring --with-iconv --with-openssl --with-mhash --with-openssl --enable-bcmath --enable-soap --with-libxml-dir --enable-pcntl --enable-shmop --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-sockets --enable-calendar --enable-wddx --with-gmp --with-curl --with-zlib --enable-zip --with-bz2 --with-gd --enable-exif --with-readline
+
+make && make install
+```
+
