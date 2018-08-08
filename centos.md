@@ -54,3 +54,14 @@ aptitude -y install open-vm-tools
 make && make install
 ```
 
+
+> mysql8.0修改密码
+> 1，vi /etc/my.cnf,在末尾添加skip-grant-tables
+> 2，重启mysql systemctl restart mysqld.service
+> 3,登录mysql mysql -u root 注意这里不要加-p
+> 4,登录进去后，执行下面语句，重置mysql密码
+> ALTER USER 'root'@'localhost' IDENTIFIED BY '23985A.sUg';
+> 5,vi /etc/my.cnf,将第一步在末尾添加的skip-grant-tables去掉，重启mysql systemctl restart mysqld.service
+> 6,mysql -u root -p 回车，输入刚设置的新密码即可登录
+
+
