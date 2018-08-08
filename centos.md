@@ -27,3 +27,15 @@ aptitude -y install open-vm-tools
 7，验证yum是否可以正常工作了，登入系统后，在shell里面输入：yum grouplist，如果网卡设置正确，那么yum就应该可以正常工作了
 
 ### yum install gcc gcc-c++
+### Cent OS 安装MySQL-Service警告：... DSA/SHA1 Signature, 密钥 ID 5072e1f5: NOKEY
+> 这是由于yum安装了旧版本的GPG keys造成的 解决办法：后面加上  --force --nodeps 
+> rpm -ivh mysql-community-server-8.0.12-1.el7.x86_64.rpm --force --nodeps
+> 默认mysqld安装在：/usr/sbin/mysqld
+> 执行：grep "A temporary password" /var/log/mysqld.log查看初始密码: txoasUGjk0:v
+> 安装完成后 sudo mysql_secure_installation 修改密码，密码要设置的很复杂:abcd1234:Aivin.Zhang
+
+> 执行systemctl enable nginx.service报错
+> 因为是源码编译安装的nginx，所以需要手动创建：vi /lib/systemd/system/nginx.service
+> 设置开机启动：systemctl enable nginx.service
+> 提示找不到bzip2，但是明明有安装bzip2  则yum install -y bzip2-devel
+> 参见文档：https://www.prosinger.net/compile-php-7-on-centos/
