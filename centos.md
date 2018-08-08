@@ -39,3 +39,4 @@ aptitude -y install open-vm-tools
 > 设置开机启动：systemctl enable nginx.service
 > 提示找不到bzip2，但是明明有安装bzip2  则yum install -y bzip2-devel
 > 参见文档：https://www.prosinger.net/compile-php-7-on-centos/
+> 参见文档：https://segmentfault.com/a/1190000004123048
