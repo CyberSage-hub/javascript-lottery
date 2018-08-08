@@ -42,3 +42,6 @@ aptitude -y install open-vm-tools
 > 参见文档：https://my.oschina.net/u/144160/blog/540301
 > 参见文档：https://www.prosinger.net/compile-php-7-on-centos/
 > 参见文档：https://segmentfault.com/a/1190000004123048
+
+> centos7安装mysql8或者mysql5.7参考：https://linuxize.com/post/install-mysql-on-centos-7/
+
