@@ -56,12 +56,35 @@ make && make install
 
 
 > mysql8.0修改密码
+
 > 1，vi /etc/my.cnf,在末尾添加skip-grant-tables
+
 > 2，重启mysql systemctl restart mysqld.service
+
 > 3,登录mysql mysql -u root 注意这里不要加-p
+
 > 4,登录进去后，执行下面语句，重置mysql密码
+
 > ALTER USER 'root'@'localhost' IDENTIFIED BY '23985A.sUg';
+
 > 5,vi /etc/my.cnf,将第一步在末尾添加的skip-grant-tables去掉，重启mysql systemctl restart mysqld.service
+
 > 6,mysql -u root -p 回车，输入刚设置的新密码即可登录
 
-
+### 安装 GNOME 桌面
+<pre>
+1、安装命令： yum groupinstall  "GNOME Desktop"  -y
+在图形界面使用 ctrl+alt+F2切换到dos界面  
+dos界面 ctrl+alt+F2切换回图形界面
+在命令上 输入 init 3 命令 切换到dos界面 
+输入 init 5命令 切换到图形界面
+如果想系统默认以某种方式启动， 使用systemd创建符号链接指向默认运行级别。
+修改方法为：
+1.首先删除已经存在的符号链接：
+rm /etc/systemd/system/default.target 
+2.默认级别转换为3(文本模式)： 
+ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target 
+或者默认级别转换为5(图形模式)：
+ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target 
+3.重启：reboot 
+</pre>
