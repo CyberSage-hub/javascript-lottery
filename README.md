@@ -1,3 +1,4 @@
+http://jssdk.demo.qiniu.io/#
 客户端请求后，直接返回给客户端，服务器端继续执行
 ```php
  27         public function index()
