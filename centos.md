@@ -4,17 +4,26 @@
 
 
 ### 各系统安装vm-tools
+
 > CentOS6:
+
 > enable EPEL repository
+
 > yum -y install open-vm-tools
+
 > service vmtoolsd start
 
+
 > CentOS7:
+
 > yum -y install open-vm-tools
+
 > systemctl start vmtoolsd
 
 > Ubuntu 14.04:
+
 > aptitude update
+
 > aptitude -y install open-vm-tools
 
 ### CentOS 7 - 最小化安装后，解决无法使用yum命令问题
