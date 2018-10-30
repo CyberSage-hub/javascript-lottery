@@ -97,3 +97,15 @@ ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target
 ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target 
 3.重启：reboot 
 </pre>
+
+### 解决虚拟机安装完centos7无法上网问题
+<pre>
+打开终端
+cd /etc/sysconfig/network-scripts/
+ls 查看一下ifcfg-eno后面对应的数字是什么，下面以eno32为例
+vi ifcfg-eno32
+编辑下
+ONBOOT="yes" 开启自动启用网络连接
+:wq 保存退出
+service network restart 重启网络
+</pre>
