@@ -62,6 +62,60 @@
 
 make && make install
 ```
+ ### centos7安装mysql8.0
+ <pre>
+ 清理原有的mysql数据库
+ rpm -pa | grep mysql
+ 结果显示
+ mysql80-community-release-el7-1.noarch
+mysql-community-server-8.0.11-1.el7.x86_64
+mysql-community-common-8.0.11-1.el7.x86_64
+mysql-community-libs-8.0.11-1.el7.x86_64
+mysql-community-client-8.0.11-1.el7.x86_64
+使用以下命令依次删除上面的程序
+yum remove mysql-xxx-xxx-
+
+whereis mysql
+rm -rf mysql相关的目录
+删除MariaDB的文件
+rpm -pa | grep mariadb
+可能的显示结果如下：
+mariadb-libs-5.5.56-2.el7.x86_64
+
+删除上面的程序
+rpm -e mariadb-libs-5.5.56-2.el7.x86_64
+可能出现错误提示如下：
+依赖检测失败：
+ 
+libmysqlclient.so.18()(64bit) 被 (已安裝) postfix-2:2.10.1-6.el7.x86_64 需要 
+libmysqlclient.so.18(libmysqlclient_18)(64bit) 被 (已安裝) postfix-2:2.10.1-6.el7.x86_64 需要 
+libmysqlclient.so.18(libmysqlclient_18)(64bit) 被 (已安裝) postfix-2:2.10.1-6.el7.x86_64 需要
+使用强制删除
+rpm -e --nodeps mariadb-libs-5.5.56-2.el7.x86_64
+至此就将原来有的mysql 和mariadb数据库删除了；
+下面mysql官网提供的mysql repo源
+https://dev.mysql.com/downloads/repo/yum/
+安装 yum repo文件并更新 yum 缓存；
+rpm -ivh mysql57-community-release-el7-11.noarch.rpm
+更新 yum 命令
+yum clean all
+yum makecache
+第一步： 查看mysql yum仓库中mysql版本，使用如下命令
+yum repolist all | grep mysql
+编辑 mysql repo文件
+vim /etc/yum.repos.d/mysql-community.repo 
+将相应版本下的enabled改成 1 即可
+安装mysql 命令如下：
+yum install mysql-community-server
+ 开启mysql 服务
+systemctl start mysqld.service
+获取初始密码登录mysql
+cat /var/log/mysqld.log | grep password
+使用初始密码登录mysql
+mysql -u root -p 
+
+修改初始密码
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Ab.Ahjkhjasdcd1234';
 
 
 > mysql8.0修改密码
