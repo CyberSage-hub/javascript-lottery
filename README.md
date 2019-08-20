@@ -66,3 +66,7 @@ javascript抽奖概率算法
         var result = probably(g.data);
         console.log(g.data[result]);        
 ```
+一条命令kill进程
+```bash
+ps -ef | grep abc | awk '{print $2}'|xargs kill -9
+```
